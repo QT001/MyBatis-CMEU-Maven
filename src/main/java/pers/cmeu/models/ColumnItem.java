@@ -14,7 +14,16 @@ public class ColumnItem {
 	private String joinType;
 	private String joinTableName;
 	private String joinColumn;
-	
+	private String jointhisColumn;//被加入表的关联列
+
+	public String getJointhisColumn() {
+		return jointhisColumn;
+	}
+
+	public void setJointhisColumn(String jointhisColumn) {
+		this.jointhisColumn = jointhisColumn;
+	}
+
 	private List<AttributeCVF> attributeCVFs;
 	private List<ColumnItem> grandItem;//第三层关系属性
 	public boolean isAnyAssociation() {

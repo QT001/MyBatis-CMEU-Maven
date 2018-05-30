@@ -96,7 +96,8 @@ public class AddSonAttributeController extends BaseController {
 	private TextField txtJoinTableName;
 	@FXML
 	private TextField txtJoinColumnName;
-
+	@FXML
+	private TextField txtJointhisColumnName;
 	@FXML
 	private Button btnSuccess;
 	@FXML
@@ -201,6 +202,7 @@ public class AddSonAttributeController extends BaseController {
 								}
 								if (tmp != null) {
 									txtJoinColumnName.setText(tmp);
+									txtJointhisColumnName.setText(tmp);
 								}
 							}
 							if (tableName != null) {
@@ -507,7 +509,7 @@ public class AddSonAttributeController extends BaseController {
 					attr.setTableAlias(txtTableAlias.getText());
 				}
 				attr.setJoinType(joinType.getSelectedToggle().getUserData().toString());
-				attr.setJoinColumn(txtJoinColumnName.getText());
+				attr.setJoinColumn(txtJointhisColumnName.getText());
 				attr.setTableName(txtTableName.getText());
 				attr.setPrimaryKey(txtPrimaryKey.getText());
 				attr.setCamel(chkUnlineCamel.isSelected());
@@ -553,6 +555,7 @@ public class AddSonAttributeController extends BaseController {
 			item.setPrimaryKey(txtPrimaryKey.getText());
 			item.setJoinTableName(txtJoinTableName.getText());
 			item.setJoinColumn(txtJoinColumnName.getText());
+			item.setJointhisColumn(txtJointhisColumnName.getText());
 			item.setJoinType(joinType.getSelectedToggle().getUserData().toString());
 			List<ColumnItem> tempList = new ArrayList<ColumnItem>();
 			// 遍历取出孙代column集合

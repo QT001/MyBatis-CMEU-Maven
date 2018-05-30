@@ -1481,7 +1481,7 @@ public class MapperUtil {
 				result.append(" ");
 			}
 			result.append(item.getJoinType() + " join " + item.getTableName() + " on " + item.getTableName() + "."
-					+ item.getJoinColumn() + "=" + item.getJoinTableName() + "." + item.getJoinColumn() + "\r\n");
+					+ item.getJointhisColumn() + "=" + item.getJoinTableName() + "." + item.getJoinColumn() + "\r\n");
 			if (item.getGrandItem() != null) {
 				for (ColumnItem itemg : item.getGrandItem()) {
 					if (itemg.getJoinTableName() == null || "".equals(itemg.getJoinTableName())
@@ -1493,7 +1493,7 @@ public class MapperUtil {
 						result.append(" ");
 					}
 					result.append(itemg.getJoinType() + " join " + itemg.getTableName() + " on " + itemg.getTableName()
-							+ "." + itemg.getJoinColumn() + "=" + itemg.getJoinTableName() + "." + itemg.getJoinColumn()
+							+ "." + itemg.getJointhisColumn() + "=" + itemg.getJoinTableName() + "." + itemg.getJoinColumn()
 							+ "\r\n");
 				}
 			}

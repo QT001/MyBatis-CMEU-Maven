@@ -90,7 +90,8 @@ public class AddGrandAttributeController extends BaseController {
 	private TextField txtJoinTableName;
 	@FXML
 	private TextField txtJoinColumnName;
-
+	@FXML
+	private TextField txtJointhisColumnName;
 	@FXML
 	private Button btnSuccess;
 	@FXML
@@ -206,6 +207,7 @@ public class AddGrandAttributeController extends BaseController {
 								}
 								if (tmpKey != null) {
 									txtJoinColumnName.setText(tmpKey);
+									txtJointhisColumnName.setText(tmpKey);
 								}
 							}
 							if (tableName != null) {
@@ -457,7 +459,7 @@ public class AddGrandAttributeController extends BaseController {
 				}
 
 				attr.setJoinType(joinType.getSelectedToggle().getUserData().toString());
-				attr.setJoinColumn(txtJoinColumnName.getText());
+				attr.setJoinColumn(txtJointhisColumnName.getText());
 				attr.setTableName(txtTableName.getText());
 				attr.setPrimaryKey(txtPrimaryKey.getText());
 				attr.setCamel(chkUnlineCamel.isSelected());
@@ -487,6 +489,7 @@ public class AddGrandAttributeController extends BaseController {
 			item.setPrimaryKey(txtPrimaryKey.getText());
 			item.setJoinTableName(txtJoinTableName.getText());
 			item.setJoinColumn(txtJoinColumnName.getText());
+			item.setJointhisColumn(txtJointhisColumnName.getText());
 			item.setJoinType(joinType.getSelectedToggle().getUserData().toString());
 			attribute.setColumnItem(item);
 			addSon.attributeCVF.add(attribute);
